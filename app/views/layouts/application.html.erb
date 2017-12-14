@@ -16,6 +16,13 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/iScroll/5.2.0/iscroll.min.js"></script>
     <!-- drawer.js -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/drawer/3.2.2/js/drawer.min.js"></script>
+
+    <!-- calendar -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.7.0/fullcalendar.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.19.4/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.7.0/fullcalendar.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.7.0/locale/ja.js"></script>
+
   </head>
 
   <body class="drawer drawer--left">
@@ -30,8 +37,13 @@
       <nav class="drawer-nav" role="navigation">
         <ul class="drawer-menu">
           <li><a class="drawer-brand" href="<%= root_path %>">ぱちマネージャー</a></li>
-          <li><a class="drawer-menu-item" href="#">Nav1</a></li>
-          <li><a class="drawer-menu-item" href="#">Nav2</a></li>
+          <% if user_signed_in? %>
+            <li>
+              <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "drawer-menu-item" %>
+            </li>
+          <% else %>
+            <li><a class="drawer-menu-item" href="#">Nav1</a></li>
+          <% end %>
         </ul>
       </nav>
     </header>
