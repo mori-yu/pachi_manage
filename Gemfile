@@ -56,3 +56,9 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 # bootstrap4
 gem 'bootstrap', '~> 4.0.0.beta2.1'
 gem 'jquery-rails'
+
+# login
+gem 'devise'
+
+#ja
+gem 'rails-i18n'
