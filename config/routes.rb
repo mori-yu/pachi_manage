@@ -7,9 +7,11 @@ Rails.application.routes.draw do
 
   resources :balances do
     collection do
-      post 'event'
+      get 'result'
     end
   end
+
+  get 'event', to: 'events#event'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

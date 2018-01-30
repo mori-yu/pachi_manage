@@ -8,6 +8,7 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag "//www.google.com/jsapi", "chartkick" %>
 
     <!-- drawer.css -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/drawer/3.2.2/css/drawer.min.css">
@@ -44,6 +45,7 @@
           <li><a class="drawer-brand" href="<%= root_path %>">ぱちマネージャー</a></li>
           <% if user_signed_in? %>
             <li>
+              <%= link_to "収支結果", result_balances_path, class: "drawer-menu-item" %>
               <%= link_to "収支作成", new_balance_path, class: "drawer-menu-item" %>
               <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "drawer-menu-item" %>
             </li>

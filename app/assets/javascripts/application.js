@@ -16,5 +16,6 @@
 //= require jquery-ui
 //= require popper
 //= require bootstrap
+//= require chartkick
 //= balances
 //= require_tree .

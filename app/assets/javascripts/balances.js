@@ -15,11 +15,17 @@ $(document).on('turbolinks:load', function() {
   $('#calendar').fullCalendar({
     selectable: true,
     ignoreTimezone: false,
-    select: select
+    select: select,
+    events: 'event.json',
+    eventClick: function(event) {
+      var id = event.id
+      var show_url = "/balances/"+id
+      location.href = show_url;
+    }
   });
 });
 
-$(function(){
+$(document).on('turbolinks:load', function() {
     //Default
     $('#datepicker-default .date').datepicker({
         format: "yyyy-mm-dd",

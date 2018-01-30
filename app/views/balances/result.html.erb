@@ -1,0 +1,11 @@
+<div class="container">
+  <div class="col-md-6 col-md-offset-3 col-sm-10 col-sm-offset-1">
+    <h2>収支結果</h2>
+    <div class="card">
+      <div class="card-body">
+        <strong>総収支：<%= @value %>円</strong>
+        <%= column_chart @chart_data %>
+      </div>
+    </div>
+  </div>
+</div>

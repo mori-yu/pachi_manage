@@ -1,0 +1,27 @@
+<div class="container">
+  <div class="col-md-6 col-md-offset-3 col-sm-10 col-sm-offset-1">
+    <div class="card">
+      <div class="card-body">
+        <p>
+          <h5>日付</h5>
+          <%= @balance.start.to_s[0, 10] %>
+        </p>
+
+        <p>
+          <h5>収支</h5>
+          <% if @balance.result %>
+            勝ち
+          <% else %>
+            負け：
+          <% end %>
+          <%= @balance.title %>円
+        </p>
+      </div>
+      <div class="card-footer">
+        <%= link_to '編集', edit_balance_path(@balance) %> |
+        <%= link_to '削除', @balance, method: :delete, data: { confirm: 'ほんとに削除してよろしいですか？' } %>
+      </div>
+    </div>
+
+  </div>
+</div>

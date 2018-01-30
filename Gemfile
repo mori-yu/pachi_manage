@@ -69,4 +69,8 @@ gem 'devise'
 # ja
 gem 'rails-i18n'
 
+#アイコン
 gem 'font-awesome-rails'
+
+#グラフ
+gem 'chartkick'
