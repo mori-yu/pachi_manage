@@ -1,0 +1,29 @@
+<%= form_for(@balance) do |f| %>
+  <% if @balance.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= @balance.errors.count %>件のエラーがあります。</h2>
+
+      <ul>
+      <% @balance.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%= f.label :日付 %>
+  <div class="form-group" id="datepicker-default">
+    <div class="form-inline">
+      <div class="input-group date">
+        <%= f.text_field :start, class: 'form-control' %>
+        <span class="input-group-addon">
+        </span>
+      </div>
+    </div>
+  </div>
+  <%= f.label :結果 %>
+  <%= f.select :result, [[ "勝ち", "true" ], [ "負け", "false" ]], {}, class: 'form-control' %>
+  <%= f.number_field :title, class: 'form-control' %>
+  <br>
+  <%= f.submit '登録', class: 'btn btn-primary btn-block' %>
+<% end %>
