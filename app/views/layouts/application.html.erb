@@ -47,6 +47,7 @@
             <li>
               <%= link_to "収支結果", result_balances_path, class: "drawer-menu-item" %>
               <%= link_to "収支作成", new_balance_path, class: "drawer-menu-item" %>
+              <%= link_to "ランキング", ranking_balances_path, class: "drawer-menu-item" %>
               <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "drawer-menu-item" %>
             </li>
           <% else %>

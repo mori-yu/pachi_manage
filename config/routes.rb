@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   resources :balances do
     collection do
       get 'result'
+      get 'ranking'
     end
   end
 

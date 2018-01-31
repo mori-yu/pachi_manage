@@ -31,6 +31,19 @@ class BalancesController < ApplicationController
     end
   end
 
+  def ranking
+    balances = Balance.all
+    sort_data = Hash.new { 0 }
+    balances.each do |e|
+      if e.result
+        sort_data[e.user.email] += e.title.to_i
+      else
+        sort_data[e.user.email] -= e.title.to_i
+      end
+    end
+    @ranking_data = Hash[ sort_data.sort_by{ |_, v| -v } ]
+  end
+
   def new
     @balance = Balance.new
   end
