@@ -52,6 +52,8 @@ group :development do
   gem 'pry-byebug'
 
   gem 'meta_request'
+
+  gem 'letter_opener_web'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
